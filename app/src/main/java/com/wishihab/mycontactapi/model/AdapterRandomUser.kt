@@ -23,7 +23,13 @@ class RandomUserAdapter(var randomUser:RandomUser?): RecyclerView.Adapter<Random
         holder.userName.text = "${user?.name?.tittle} ${user?.name?.first} ${user?.name?.last}"
         holder.userEmail.text = user?.email
         holder.userPhone.text = user?.phone
+        holder.userCell.text = user?.nationality
         Picasso.get().load(user?.picture?.large).into(holder.userAvatar);
+
+        holder.userAvatar.setOnClickListener {
+            //set ke list main activity
+        }
+
 
     }
 
@@ -35,7 +41,10 @@ class RandomUserAdapter(var randomUser:RandomUser?): RecyclerView.Adapter<Random
         val userAvatar: ImageView = view.findViewById(R.id.item_imageview_user_avatar)
         val userName: TextView = view.findViewById(R.id.item_textview_user_name)
         val userPhone: TextView = view.findViewById(R.id.item_textview_user_phone)
+        val userCell: TextView = view.findViewById(R.id.item_textview_user_cell)
         val userEmail: TextView = view.findViewById(R.id.item_textview_user_email)
+
+
     }
 
 

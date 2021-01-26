@@ -3,9 +3,6 @@ package com.wishihab.mycontactapi.view
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,15 +19,17 @@ class AddContact: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_add)
+        setTitle("Add Contact")
 
         val randomUserAdapter = RandomUserAdapter(null)
         val viewLayout = LinearLayoutManager(this)
 
-        userList = findViewById<RecyclerView>(R.id.recycleList).apply {
+        userList = findViewById<RecyclerView>(R.id.recycleListadd).apply {
             layoutManager = viewLayout
             adapter = randomUserAdapter
         }
+
     }
 
     override fun onStart() {

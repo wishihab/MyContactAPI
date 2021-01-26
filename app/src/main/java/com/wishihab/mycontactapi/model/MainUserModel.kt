@@ -4,28 +4,28 @@ package com.wishihab.mycontactapi.model
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
-@JsonIgnoreProperties(ignoreUnknown = true)data class Name(
+@JsonIgnoreProperties(ignoreUnknown = true)data class Main_Name(
     @JsonProperty("title") val tittle: String?,
     @JsonProperty("first") val first: String,
     @JsonProperty("last")  val last:String
 )
 
-data class Street(
+data class Main_Street(
     @JsonProperty("number")  val number:Int,
     @JsonProperty("name")  val name:String
 )
 
-data class Coordinates(
+data class Main_Coordinates(
     @JsonProperty("latitude") val latitude:String,
     @JsonProperty("longitude") val longitude:String
 )
 
-data class TimeZone(
+data class Main_TimeZone(
     @JsonProperty("offset") val offset:String,
     @JsonProperty("description") val description:String
 )
 
-data class Location(
+data class Main_Location(
     @JsonProperty("street") val street:Street,
     @JsonProperty("city") val city:String,
     @JsonProperty("state") val state: String,
@@ -35,7 +35,7 @@ data class Location(
     @JsonProperty("timezone") val timezone: TimeZone
 )
 
-data class Login(
+data class Main_Login(
     @JsonProperty("uuid") val uuid:String,
     @JsonProperty("username") val username:String,
     @JsonProperty("password") val password:String,
@@ -45,28 +45,28 @@ data class Login(
     @JsonProperty("sha256") val sha256:String
 )
 
-data class DateOfBirth(
+data class Main_DateOfBirth(
     @JsonProperty("date") val date:String,
     @JsonProperty("age") val age:Int
 )
 
-data class Registered(
+data class Main_Registered(
     @JsonProperty("date") val date:String,
     @JsonProperty("age") val age:Int
 )
 
-data class Identification(
+data class Main_Identification(
     @JsonProperty("name") val name:String?,
     @JsonProperty("value") val value:String?
 )
 
-data class Picture(
+data class Main_Picture(
     @JsonProperty("large") val large:String,
     @JsonProperty("medium") val medium:String,
     @JsonProperty("thumbnail") val thumbnail:String
 )
 
-data class Result(
+data class Main_Result(
     @JsonProperty("gender") val gender: String,
     @JsonProperty("name") val name: Name,
     @JsonProperty("location") val location: Location,
@@ -82,7 +82,7 @@ data class Result(
 
 )
 
-data class Info(
+data class Main_Info(
     @JsonProperty("seed") val seed:String,
     @JsonProperty("results")  val results: Int,
     @JsonProperty("page") val page: Int,
@@ -90,7 +90,7 @@ data class Info(
 
 )
 
-data class RandomUser (
+data class Main_RandomUser (
     @JsonProperty("results") val results: MutableList<Result>,
     @JsonProperty("info") val info:Info
 )

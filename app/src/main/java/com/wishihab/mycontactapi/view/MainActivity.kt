@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
         if (id == R.id.add_action){
             val intent = Intent(this, AddContact::class.java)
             startActivity(intent)
-            Toast.makeText(this, "item Add Clicked", Toast.LENGTH_SHORT).show()
-            return true
         }
         return super.onOptionsItemSelected(item)
     }
